@@ -1,0 +1,208 @@
+/* CSS RESET */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* MY CSS */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: black;
+  color: #d5d4d8;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+main {
+  background-color: #1f2937;
+}
+#color {
+  display: block;
+  align-self: center;
+}
+
+.controls {
+  padding: 20px;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+/* select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+} */
+
+select {
+  background-color: #1f2937;
+  padding: 7px 10px;
+  color: #d5d4d8;
+  cursor: pointer;
+  border-radius: 6px;
+  width: 300px;
+  border: 2px solid gray;
+  transition: 0.4s;
+}
+option {
+  background-color: #1f2937;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+option:not(option:last-of-type) {
+  border-bottom: none;
+}
+option:hover {
+  background: #33445b;
+}
+option:checked {
+  font-weight: bold;
+}
+option::checkmark {
+  order: 1;
+  margin-left: auto;
+  color: #5a8dff;
+}
+.get-btn {
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #3d4b60;
+  cursor: pointer;
+}
+.get-btn:hover {
+  background-color: #1f2937;
+  border: 1px solid #ffffff;
+}
+
+.pallette {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.rendered-color {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.single {
+  height: 415px;
+  width: 100%;
+}
+.color-1 {
+  background-color: #f55a5a;
+}
+.color-2 {
+  background-color: #2b283a;
+}
+.color-3 {
+  background-color: #fbf3ab;
+}
+.color-4 {
+  background-color: #aad1b6;
+}
+.color-5 {
+  background-color: #a626d3;
+}
+
+.color-code {
+  font-size: 0.75rem;
+  color: #d5d4d8;
+  padding: 10px;
+  cursor: pointer;
+}
+.color-code:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+@media (max-width: 450px) {
+  select {
+    width: 100%;
+    max-width: 300px;
+  }
+  .pallette {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
