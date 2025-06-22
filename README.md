@@ -12,7 +12,7 @@ A simple, responsive web app that lets users generate color palettes based on a 
 
 ## 🖼️ Demo
 
-👉 [Live Demo](https://color-schem3-generator.netlify.app/)  
+👉 [Live Demo](https://gulzhub.github.io/color-scheme-generator/)  
 
 ## 🛠️ Tech Stack
 
